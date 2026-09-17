@@ -1,6 +1,6 @@
 name: Scan images
 
-on:  
+on:
   schedule:
     - cron: '00 23 * * *'
   workflow_dispatch:
@@ -12,7 +12,7 @@ jobs:
     uses: canonical/charmed-kubeflow-workflows/.github/workflows/get-published-images-scan-and-report.yaml@main
     strategy:
       matrix:
-        branch: [main, track/0.13]
+        branch: [main]
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     with:
